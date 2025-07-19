@@ -1,16 +1,47 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
+title: 'Synapse: Cradling Emotion Like Liquid Soul'
+description: 'On shaping emotions with flexible membranes.'
 pubDate: 'Jul 08 2022'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+heroImage: '../../assets/cradling_emotions_like_liquid_soul.png'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+## 🧠 Synapse: Cradling Emotion Like Liquid Soul 🌊🫧
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+<p align="center">
+  <img src="../../assets/cradling_emotions_like_liquid_soul.png" alt="Cradling Emotion Like Liquid Soul" width="400"/>
+</p>
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+> "Emotions aren’t meant to be caged — but they *do* need a container."
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Feelings are like liquid soul-matter — they **flow**, they **swell**, they **spill**.  
+And if there’s no vessel to hold them? They flood.  
+If the vessel is too rigid? They burst.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+🪶 **Cradling** emotions means shaping your inner world with *flexible membranes*, not walls.  
+Membranes that **breathe**, **bend**, and **hold** — like emotional scaffolding built from compassion.
+
+---
+
+### 🧬 Why It Matters (Especially for Neurodivergent Minds):
+
+- Neuroplasticity isn’t just brain science — it’s soul architecture.
+- When you reshape how you **hold** emotions, you reshape how they **move** through you.
+- For those with ADHD, trauma, or emotional intensity:  
+  This isn’t abstract. It’s survival. It’s sanity. It’s sacred.
+
+---
+
+### 🛠️ The Practice:
+
+- **Contain, don’t constrain.** Let the feeling exist without letting it define you.
+- **Build inner membranes.** Not to control emotion, but to *guide* it.
+- **Flow, don’t flood.** Let the emotion move — but within a shape that serves your healing.
+
+---
+
+When we learn to cradle our emotions like this:  
+We don’t drown.  
+We **flow**.  
+And we finally start to feel **human** — not broken, but whole in motion.  
+
+> "You are the vessel. You are the water. And you are the artist shaping both."
