@@ -1,0 +1,30 @@
+---
+---
+<section id="landing-hero" class="min-h-[60vh] flex flex-col justify-center items-center text-center bg-gradient-to-b from-white via-teal-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
+  <div class="container mx-auto px-4 motion-safe:opacity-0 motion-safe:translate-y-6 transition-all duration-700" data-animate>
+    <h1 class="text-5xl font-semibold text-gray-900 dark:text-gray-100 mb-4 font-sans">Ego Hygiene</h1>
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+      Cultivating balance between spiritual insight and technical mastery.
+    </p>
+    <a href="/blogs" class="inline-block bg-indigo-600 text-white rounded-full px-6 py-3 shadow-lg hover:bg-indigo-700 transition-colors">Explore the Blog</a>
+  </div>
+</section>
+
+<style>
+#landing-hero[data-visible] [data-animate]{
+  opacity:1;transform:none;
+}
+#landing-hero [data-animate]{
+  opacity:0;transform:translateY(1.5rem);
+}
+</style>
+
+<script>
+const hero = document.getElementById('landing-hero');
+if(hero){
+  const obs=new IntersectionObserver((e)=>{
+    e.forEach(ent=>{if(ent.isIntersecting){hero.setAttribute('data-visible','');}});
+  },{threshold:0.3});
+  obs.observe(hero);
+}
+</script>
