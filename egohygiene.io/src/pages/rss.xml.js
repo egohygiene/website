@@ -1,16 +1,18 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { getSynapses } from '../../../src/models/Synapse';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
-	const posts = await getCollection('blog');
-	return rss({
+        const posts = getSynapses();
+        return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		site: context.site,
                 items: posts.map((post) => ({
-                        ...post.data,
-                        link: `/blogs/${post.id}/`,
+                        title: post.title,
+                        pubDate: new Date(post.created),
+                        description: post.content.slice(0, 120),
+                        link: `/synapses/${post.slug}/`,
                 })),
 	});
 }

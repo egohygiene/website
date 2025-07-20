@@ -1,0 +1,16 @@
+---
+import SynapseLayout from '../../components/synapse/SynapseLayout.astro';
+import { getSynapses, mapSynapsesBySlug } from '../../../../src/models/Synapse';
+
+export function getStaticPaths() {
+  return getSynapses().map((syn) => ({ params: { slug: syn.slug } }));
+}
+
+const { slug } = Astro.params;
+const synapse = mapSynapsesBySlug()[slug];
+if (!synapse) {
+  throw new Error(`Synapse not found: ${slug}`);
+}
+---
+
+<SynapseLayout synapse={synapse} />
