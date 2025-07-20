@@ -1,0 +1,21 @@
+---
+import { getSynapses } from '../../../../src/models/Synapse';
+import SynapseCard from '../blog/SynapseCard.astro';
+
+const synapses = getSynapses()
+  .sort((a, b) => new Date(b.created).valueOf() - new Date(a.created).valueOf())
+  .slice(0, 4);
+---
+<section id="synapses" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">Latest Synapses</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      {synapses.map((syn) => (
+        <SynapseCard synapse={syn} />
+      ))}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/blogs" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition-colors">View All Posts</a>
+    </div>
+  </div>
+</section>
