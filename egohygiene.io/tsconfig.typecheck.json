@@ -1,7 +1,16 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
-    "extends": "./tsconfig.base.json",
-    "include": ["src", "vite.config.ts", "vitest.config.ts"],
+    "extends": "./tsconfig.app.json",
+    "include": [
+        "db",
+        "src",
+        "src/env.d.ts",
+        "src/astro-shim.d.ts",
+        ".astro/types.d.ts",
+        "astro.config.mts",
+        "vite.config.ts",
+        "vitest.config.ts"
+    ],
     "compilerOptions": {
         "noEmit": true
     }
