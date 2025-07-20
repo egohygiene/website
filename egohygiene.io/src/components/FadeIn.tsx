@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-interface FadeInProps {
+export type FadeInProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;

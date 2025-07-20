@@ -10,7 +10,15 @@ const colors = [
   '#6b91ff', '#ff6bb9', '#6bffde', '#ffd56b', '#9dff6b', '#6bffb9'
 ];
 
-export default function Planet({ pillar, index, total }: { pillar: Pillar; index: number; total: number }): React.ReactElement {
+export default function Planet({
+  pillar,
+  index,
+  total
+}: {
+  pillar: Pillar;
+  index: number;
+  total: number;
+}): React.ReactElement {
   const group = useRef<Group>(null);
   const mesh = useRef<Mesh>(null);
   const [hovered, setHovered] = useState<boolean>(false);
@@ -21,8 +29,9 @@ export default function Planet({ pillar, index, total }: { pillar: Pillar; index
     config: { mass: 1, tension: 200, friction: 20 }
   });
 
-  // Load texture based on slug
-  const texture: Texture = useLoader(TextureLoader, `/assets/textures/planets/${pillar.slug}.jpg`);
+  // Load color and bump map
+  const texture: Texture = useLoader(TextureLoader, `/assets/textures/planets/${pillar.slug}.png`);
+  const bumpMap: Texture = useLoader(TextureLoader, `/assets/textures/planets/${pillar.slug}-bump.png`);
 
   useFrame(({ clock }) => {
     if (!group.current || !mesh.current) return;
@@ -38,6 +47,18 @@ export default function Planet({ pillar, index, total }: { pillar: Pillar; index
     mesh.current.rotation.y += 0.002;
   });
 
+  // Avoid deep type instantiation in JSX
+  const materialProps = {
+    map: texture,
+    bumpMap,
+    bumpScale: 0.05,
+    color: colors[index % colors.length],
+    emissive: colors[index % colors.length],
+    emissiveIntensity,
+    roughness: 0.2,
+    metalness: 0.4
+  };
+
   return (
     <group ref={group}>
       <animated.mesh
@@ -48,14 +69,7 @@ export default function Planet({ pillar, index, total }: { pillar: Pillar; index
         onPointerOut={() => setHovered(false)}
       >
         <sphereGeometry args={[0.6, 64, 64]} />
-        <animated.meshStandardMaterial
-          map={texture}
-          color={colors[index % colors.length]}
-          emissive={colors[index % colors.length]}
-          emissiveIntensity={emissiveIntensity}
-          roughness={0.2}
-          metalness={0.4}
-        />
+        <animated.meshStandardMaterial {...(materialProps as any)} />
       </animated.mesh>
 
       {/* Pillar Label Text */}

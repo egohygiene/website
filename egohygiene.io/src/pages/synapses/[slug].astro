@@ -11,7 +11,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   return synapses.map((synapse) => ({ params: { slug: synapse.slug } }));
 }
 
-const { slug } = Astro.params as AstroParams<Params>;;
+const { slug } = Astro.params as AstroParams<Params>;
 const synapseMap: Record<string, Synapse> = await mapSynapsesBySlug();
 const synapse: Synapse = synapseMap[slug];
 if (!synapse) {

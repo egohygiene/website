@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Output targets
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler", // required for Vite + Astro + modern ESM
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    // Module resolution & paths
+    "baseUrl": ".",
+    "paths": {
+      "@universal/*": ["src/*"]
+    },
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleSuffixes": [".ts", ".d.ts", ".tsx", ".js", ".jsx"],
+
+    // Interop & imports
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+
+    // Type checking
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+
+    // No JS output (type-check only)
+    "noEmit": true,
+    "allowJs": false,
+    "verbatimModuleSyntax": true,
+
+    // Defer environment types to extending configs
+    "types": [],
+    "exclude": [
+      "dist",
+      "node_modules"
+    ]
+  }
+}

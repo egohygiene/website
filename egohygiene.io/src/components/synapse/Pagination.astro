@@ -1,8 +1,8 @@
 ---
 const { page, perPage, total } = Astro.props as { page: number; perPage: number; total: number };
-const totalPages = Math.ceil(total / perPage);
-const hasPrev = page > 1;
-const hasNext = page < totalPages;
+const totalPages: number = Math.ceil(total / perPage);
+const hasPrev: boolean = page > 1;
+const hasNext: boolean = page < totalPages;
 ---
 <nav class="pagination">
   {hasPrev && <a href={`?page=${page - 1}`} class="prev">Prev</a>}

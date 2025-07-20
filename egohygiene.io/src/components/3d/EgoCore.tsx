@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useSpring, animated } from '@react-spring/three';
+import { useSpring, animated, SpringValue } from '@react-spring/three';
 import type { Mesh } from 'three';
 
 export default function EgoCore(): React.ReactElement {
@@ -10,7 +10,7 @@ export default function EgoCore(): React.ReactElement {
     to: { scale: 1.1 },
     loop: { reverse: true },
     config: { duration: 2000 }
-  });
+  }) as { scale: SpringValue<number> };
 
   useFrame(() => {
     if (mesh.current) mesh.current.rotation.y += 0.005;

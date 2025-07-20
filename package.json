@@ -8,6 +8,7 @@
     "build": "pnpm --filter egohygiene.io build",
     "preview": "pnpm --filter egohygiene.io preview",
     "astro": "pnpm --filter egohygiene.io astro",
+    "typecheck": "pnpm --filter egohygiene.io typecheck",
     "validate-data": "ts-node --esm scripts/validate-data.ts"
   },
   "devDependencies": {

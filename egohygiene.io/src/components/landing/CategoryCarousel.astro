@@ -31,11 +31,11 @@ const categories = [
 </style>
 
 <script>
-const car = document.getElementById('landing-carousel');
-if(car){
+const carousel: HTMLElement | null = document.getElementById('landing-carousel');
+if (carousel){
   const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting) car.setAttribute('data-visible','');});
+    entries.forEach(e=>{if(e.isIntersecting) carousel.setAttribute('data-visible','');});
   },{threshold:0.2});
-  obs.observe(car);
+  obs.observe(carousel);
 }
 </script>

@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // Astro + React integration
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+
+    // Local aliases
+    "baseUrl": ".",
+    "paths": {
+      "@egohygiene/*": ["src/*"]
+    },
+
+    // Optional: customize conditions if you're using exports maps
+    "customConditions": ["development", "browser", "import"]
+  },
+  "include": [
+    "src/**/*.ts,tsx,js,jsx,astro",
+    ".astro/types.d.ts",
+    "astro.config.ts",
+  ]
+}

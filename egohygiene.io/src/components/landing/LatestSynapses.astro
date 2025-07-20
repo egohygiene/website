@@ -1,8 +1,8 @@
 ---
-import { getSynapses } from '../../../../src/models/Synapse';
-import { SynapseCard } from '@components';
+import { getSynapses, type Synapse } from '@egohygiene/models';
+import { SynapseCard } from '@egohygiene/components';
 
-const synapses = (await getSynapses())
+const synapses: Synapse[] = (await getSynapses())
   .sort((a, b) => new Date(b.created).valueOf() - new Date(a.created).valueOf())
   .slice(0, 4);
 ---
