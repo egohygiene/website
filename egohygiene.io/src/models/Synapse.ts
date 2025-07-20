@@ -1,5 +1,4 @@
-import { db } from 'astro:db';
-import { Synapse as SynapseTable } from '../../egohygiene.io/db/config';
+import { db, Synapse as SynapseTable } from 'astro:db';
 
 export interface Synapse {
   id: string;

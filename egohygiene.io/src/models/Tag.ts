@@ -1,5 +1,4 @@
-import { db } from 'astro:db';
-import { Tag as TagTable } from '../../egohygiene.io/db/config';
+import { db, Tag as TagTable } from 'astro:db';
 
 export interface Tag {
   name: string;
