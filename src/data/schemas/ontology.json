@@ -4,6 +4,7 @@
   "entities": [
     { "type": "pillar", "schema": "pillars.schema.json" },
     { "type": "synapse", "schema": "synapse.schema.json" },
+    { "type": "term", "schema": "terms.schema.json" },
     { "type": "tag", "schema": "tags.schema.json" },
     { "type": "system", "schema": "systems.schema.json" }
   ],

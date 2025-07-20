@@ -1,0 +1,15 @@
+---
+import TermLayout from '../../components/term/TermLayout.astro';
+import { loadTerms, mapTermsBySlug } from '../../../../src/models/Term';
+
+export function getStaticPaths() {
+  return loadTerms().map(t => ({ params: { slug: t.slug } }));
+}
+
+const { slug } = Astro.params;
+const term = mapTermsBySlug()[slug];
+if (!term) {
+  throw new Error(`Term not found: ${slug}`);
+}
+---
+<TermLayout term={term} />
