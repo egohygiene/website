@@ -76,6 +76,22 @@ write_file "$SCHEMA_DIR/synapse.schema.json" '{
 }'
 
 # ------------------------
+# terms.schema.json
+# ------------------------
+write_file "$SCHEMA_DIR/terms.schema.json" '{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Glossary Term",
+  "type": "object",
+  "required": ["id", "slug", "term", "definition"],
+  "properties": {
+    "id": { "type": "string" },
+    "slug": { "type": "string" },
+    "term": { "type": "string" },
+    "definition": { "type": "string" }
+  }
+}'
+
+# ------------------------
 # tags.schema.json
 # ------------------------
 write_file "$SCHEMA_DIR/tags.schema.json" '{
@@ -145,6 +161,7 @@ write_file "$SCHEMA_DIR/manifest.json" '{
   "modules": [
     { "name": "pillars", "file": "pillars.schema.json" },
     { "name": "synapse", "file": "synapse.schema.json" },
+    { "name": "terms", "file": "terms.schema.json" },
     { "name": "tags", "file": "tags.schema.json" },
     { "name": "systems", "file": "systems.schema.json" },
     { "name": "relationships", "file": "relationships.schema.json" }
@@ -160,6 +177,7 @@ write_file "$SCHEMA_DIR/ontology.json" '{
   "entities": [
     { "type": "pillar", "schema": "pillars.schema.json" },
     { "type": "synapse", "schema": "synapse.schema.json" },
+    { "type": "term", "schema": "terms.schema.json" },
     { "type": "tag", "schema": "tags.schema.json" },
     { "type": "system", "schema": "systems.schema.json" }
   ],
