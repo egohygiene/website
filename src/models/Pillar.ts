@@ -1,4 +1,5 @@
-import pillars from '../data/pillars.json';
+import { db } from 'astro:db';
+import { Pillar as PillarTable } from '../../egohygiene.io/db/config';
 
 export interface Pillar {
   id: number;
@@ -13,12 +14,14 @@ export interface Pillar {
   image?: string;
 }
 
-export function loadPillars(): Pillar[] {
-  return pillars as Pillar[];
+export async function loadPillars(): Promise<Pillar[]> {
+  const rows = await db.select().from(PillarTable).all();
+  return rows as Pillar[];
 }
 
-export function mapPillarsBySlug(): Record<string, Pillar> {
-  return loadPillars().reduce((acc, pillar) => {
+export async function mapPillarsBySlug(): Promise<Record<string, Pillar>> {
+  const ps = await loadPillars();
+  return ps.reduce((acc, pillar) => {
     acc[pillar.slug] = pillar;
     return acc;
   }, {} as Record<string, Pillar>);

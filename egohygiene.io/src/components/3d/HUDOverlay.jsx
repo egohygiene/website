@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HUDOverlay() {
+export default function HUDOverlay({ pillars }) {
   return (
     <>
       <div className="absolute top-4 left-4 text-white text-lg font-semibold">

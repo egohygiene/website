@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import LandingScene from '../components/3d/LandingScene.jsx';
+import { loadPillars } from '../../../src/models/Pillar';
 import AboutEgoHygiene from '../components/landing/AboutEgoHygiene.astro';
 import LatestSynapses from '../components/landing/LatestSynapses.astro';
 import ExplorePillars from '../components/landing/ExplorePillars.astro';
@@ -9,6 +10,8 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 <!doctype html>
+const pillars = await loadPillars();
+
 <html lang="en" class="scroll-smooth">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />

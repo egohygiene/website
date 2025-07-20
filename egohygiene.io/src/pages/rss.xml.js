@@ -3,7 +3,7 @@ import { getSynapses } from '../../../src/models/Synapse';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
-        const posts = getSynapses();
+        const posts = await getSynapses();
         return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,

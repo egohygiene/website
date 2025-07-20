@@ -6,7 +6,7 @@ import { loadTerms } from '../../../../src/models/Term';
 import TermList from '../../components/term/TermList.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 
-const terms = loadTerms();
+const terms = await loadTerms();
 ---
 <!doctype html>
 <html lang="en">

@@ -9,7 +9,7 @@ import Pagination from '../../components/synapse/Pagination.astro';
 import CategoryCarousel from '../../components/CategoryCarousel.astro';
 import { CATEGORY_GROUPS } from '../../data/categories';
 
-const allSynapses = getSynapses().sort(
+const allSynapses = (await getSynapses()).sort(
   (a, b) => new Date(b.created).valueOf() - new Date(a.created).valueOf(),
 );
 const perPage = 5;

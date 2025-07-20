@@ -1,4 +1,5 @@
-import tags from '../data/tags.json';
+import { db } from 'astro:db';
+import { Tag as TagTable } from '../../egohygiene.io/db/config';
 
 export interface Tag {
   name: string;
@@ -6,12 +7,14 @@ export interface Tag {
   related?: string[];
 }
 
-export function loadTags(): Tag[] {
-  return tags as Tag[];
+export async function loadTags(): Promise<Tag[]> {
+  const rows = await db.select().from(TagTable).all();
+  return rows as Tag[];
 }
 
-export function mapTagsByName(): Record<string, Tag> {
-  return loadTags().reduce((acc, tag) => {
+export async function mapTagsByName(): Promise<Record<string, Tag>> {
+  const tags = await loadTags();
+  return tags.reduce((acc, tag) => {
     acc[tag.name] = tag;
     return acc;
   }, {} as Record<string, Tag>);
