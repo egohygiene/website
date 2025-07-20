@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "universal"
+name = "website"
 version = "0.1.0"
-description = "Python development tools for the universal monorepo."
+description = "egohygiene.io website"
 authors = ["Universal <dev@example.com>"]
 license = "MIT"
 readme = "README.md"
@@ -9,6 +9,10 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
+opencv-python = "^4.12.0.88"
+pillow = "^11.3.0"
+readability-lxml = "^0.8.4.1"
+beautifulsoup4 = "^4.13.4"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.2.0"
