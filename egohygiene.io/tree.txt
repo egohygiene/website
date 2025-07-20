@@ -1,0 +1,87 @@
+.
+├── README.md
+├── astro.config.mts
+├── db
+│   ├── config.ts
+│   └── seed.ts
+├── package.json
+├── plugins
+│   ├── remark-modified-time.ts
+│   └── remark-reading-time.ts
+├── pnpm-lock.yaml
+├── public
+│   ├── CNAME
+│   ├── assets
+│   │   ├── categories
+│   │   └── textures
+│   ├── favicon.svg
+│   └── fonts
+│       ├── atkinson-bold.woff
+│       └── atkinson-regular.woff
+├── src
+│   ├── assets
+│   │   ├── blog-placeholder-1.jpg
+│   │   ├── blog-placeholder-2.jpg
+│   │   ├── blog-placeholder-3.jpg
+│   │   ├── blog-placeholder-4.jpg
+│   │   ├── blog-placeholder-5.jpg
+│   │   ├── blog-placeholder-about.jpg
+│   │   └── cradling_emotions_like_liquid_soul.png
+│   ├── astro-shim.d.ts
+│   ├── components
+│   │   ├── 3d
+│   │   ├── BaseHead.astro
+│   │   ├── CategoryCarousel.astro
+│   │   ├── FadeIn.tsx
+│   │   ├── Footer.astro
+│   │   ├── FormattedDate.astro
+│   │   ├── Header.astro
+│   │   ├── HeaderLink.astro
+│   │   ├── index.ts
+│   │   ├── landing
+│   │   ├── synapse
+│   │   └── term
+│   ├── consts.ts
+│   ├── content
+│   │   └── blog
+│   ├── content.config.ts
+│   ├── data
+│   │   ├── categories.ts
+│   │   ├── pillars.json
+│   │   ├── relationships.json
+│   │   ├── schemas
+│   │   ├── synapses.json
+│   │   ├── systems.json
+│   │   ├── tags.json
+│   │   └── terms.json
+│   ├── env.d.ts
+│   ├── layouts
+│   │   ├── BlogPost.astro
+│   │   └── index.ts
+│   ├── models
+│   │   ├── Pillar.ts
+│   │   ├── Relationship.ts
+│   │   ├── Synapse.ts
+│   │   ├── System.ts
+│   │   ├── Tag.ts
+│   │   ├── Term.ts
+│   │   └── index.ts
+│   ├── pages
+│   │   ├── about.astro
+│   │   ├── index.astro
+│   │   ├── rss.xml.js
+│   │   ├── synapses
+│   │   └── terms
+│   ├── styles
+│   │   └── global.css
+│   └── types
+│       └── astro.ts
+├── tree.txt
+├── tsconfig.app.json
+├── tsconfig.base.json
+├── tsconfig.eslint.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── tsconfig.typecheck.json
+
+26 directories, 59 files

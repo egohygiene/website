@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     // Astro + React integration
@@ -10,7 +11,6 @@
     "paths": {
       "@egohygiene/*": ["src/*"]
     },
-
 
     // Optional: customize conditions if you're using exports maps
     "customConditions": ["development", "browser", "import"]
