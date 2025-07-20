@@ -10,11 +10,11 @@
     // Module resolution & paths
     "baseUrl": ".",
     "paths": {
-      "@universal/*": ["src/*"]
+      "@egohygiene/*": ["src/*"],
     },
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "moduleSuffixes": [".ts", ".d.ts", ".tsx", ".js", ".jsx"],
+    "moduleSuffixes": [".ts", ".d.ts", ".tsx", ".js", ".jsx", "astro"],
 
     // Interop & imports
     "esModuleInterop": true,
@@ -33,10 +33,10 @@
     "verbatimModuleSyntax": true,
 
     // Defer environment types to extending configs
-    "types": [],
-    "exclude": [
-      "dist",
-      "node_modules"
-    ]
-  }
+    "types": []
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }

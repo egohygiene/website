@@ -2,7 +2,9 @@
   "name": "website",
   "private": true,
   "type": "module",
-  "workspaces": ["egohygiene.io"],
+  "workspaces": [
+    "egohygiene.io"
+  ],
   "scripts": {
     "dev": "pnpm --filter egohygiene.io dev",
     "build": "pnpm --filter egohygiene.io build",
@@ -12,6 +14,7 @@
     "validate-data": "ts-node --esm scripts/validate-data.ts"
   },
   "devDependencies": {
+    "@types/node": "^24.0.15",
     "ajv": "^8.12.0",
     "ts-node": "^10.9.2"
   }

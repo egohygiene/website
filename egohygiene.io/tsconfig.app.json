@@ -15,8 +15,9 @@
     "customConditions": ["development", "browser", "import"]
   },
   "include": [
-    "src/**/*.ts,tsx,js,jsx,astro",
+    "db",
+    "src",
     ".astro/types.d.ts",
-    "astro.config.ts",
+    "astro.config.mts",
   ]
 }
