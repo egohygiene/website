@@ -14,5 +14,14 @@ Structured content is provided through **Astro DB** instead of static JSON files
    pnpm dev
    ```
 
+Before seeding the database, validate the structured content:
+```bash
+pnpm validate-data
+```
+Then run the Astro DB seed command:
+```bash
+pnpm astro db seed
+```
+
 All workspace commands proxy to the `egohygiene.io` package under the hood.
 Run `pnpm astro -- <command>` to invoke any Astro CLI commands.
