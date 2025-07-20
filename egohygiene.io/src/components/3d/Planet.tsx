@@ -1,18 +1,19 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three';
+import { TextureLoader, type Group, type Mesh, type Texture } from 'three';
 import { Text, Html } from '@react-three/drei';
 import { useSpring, animated } from '@react-spring/three';
+import type { Pillar } from '@egohygiene/models';
 
 const colors = [
   '#ff6b6b', '#6bfaff', '#ffef6b', '#6bff7a', '#b66bff', '#ff8e6b',
   '#6b91ff', '#ff6bb9', '#6bffde', '#ffd56b', '#9dff6b', '#6bffb9'
 ];
 
-export default function Planet({ pillar, index, total }) {
-  const group = useRef();
-  const mesh = useRef();
-  const [hovered, setHovered] = useState(false);
+export default function Planet({ pillar, index, total }: { pillar: Pillar; index: number; total: number }): React.ReactElement {
+  const group = useRef<Group>(null);
+  const mesh = useRef<Mesh>(null);
+  const [hovered, setHovered] = useState<boolean>(false);
 
   const { scale } = useSpring({ scale: hovered ? 1.5 : 1 });
   const { emissiveIntensity } = useSpring({
@@ -21,9 +22,10 @@ export default function Planet({ pillar, index, total }) {
   });
 
   // Load texture based on slug
-  const texture = useLoader(TextureLoader, `/assets/textures/planets/${pillar.slug}.jpg`);
+  const texture: Texture = useLoader(TextureLoader, `/assets/textures/planets/${pillar.slug}.jpg`);
 
   useFrame(({ clock }) => {
+    if (!group.current || !mesh.current) return;
     const t = clock.getElapsedTime();
     const angle = (index / total) * Math.PI * 2 + t * 0.05;
     const radius = 7;

@@ -1,5 +1,5 @@
-export { default as BackgroundAudio } from './BackgroundAudio.jsx';
-export { default as EgoCore } from './EgoCore.jsx';
-export { default as HUDOverlay } from './HUDOverlay.jsx';
-export { default as LandingScene } from './LandingScene.jsx';
-export { default as Planet } from './Planet.jsx';
+export { default as BackgroundAudio } from './BackgroundAudio.tsx';
+export { default as EgoCore } from './EgoCore.tsx';
+export { default as HUDOverlay } from './HUDOverlay.tsx';
+export { default as LandingScene } from './LandingScene.tsx';
+export { default as Planet } from './Planet.tsx';
