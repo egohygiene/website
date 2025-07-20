@@ -1,17 +1,19 @@
 ---
-import { FormattedDate } from '@components';
+import { FormattedDate, FadeIn } from '@components';
 import type { Synapse } from '../../../../src/models/Synapse';
 
 const { synapse } = Astro.props as { synapse: Synapse };
 ---
-<article class="synapse-card">
-  <a href={`/synapses/${synapse.slug}/`} class="block no-underline">
-    <h4 class="title">{synapse.title}</h4>
-    <p class="date"><FormattedDate date={new Date(synapse.created)} /></p>
-    <p class="excerpt">{synapse.content.slice(0, 120)}{synapse.content.length > 120 ? '…' : ''}</p>
-    <p class="tags">{synapse.tags.map(tag => `#${tag}`).join(' ')}</p>
-  </a>
-</article>
+<FadeIn client:visible>
+  <article class="synapse-card">
+    <a href={`/synapses/${synapse.slug}/`} class="block no-underline">
+      <h4 class="title">{synapse.title}</h4>
+      <p class="date"><FormattedDate date={new Date(synapse.created)} /></p>
+      <p class="excerpt">{synapse.content.slice(0, 120)}{synapse.content.length > 120 ? '…' : ''}</p>
+      <p class="tags">{synapse.tags.map(tag => `#${tag}`).join(' ')}</p>
+    </a>
+  </article>
+</FadeIn>
 
 <style>
 .synapse-card {
