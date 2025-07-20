@@ -14,5 +14,6 @@ export async function GET(context) {
                         description: post.content.slice(0, 120),
                         link: `/synapses/${post.slug}/`,
                 })),
+				customData: `<language>en-us</language>`,
 	});
 }
