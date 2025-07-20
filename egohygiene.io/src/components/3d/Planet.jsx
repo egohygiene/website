@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
+import React, { useRef, useState, useMemo } from 'react';
+import { useFrame, useLoader } from '@react-three/fiber';
+import { TextureLoader } from 'three';
+import { Text, Html } from '@react-three/drei';
 import { useSpring, animated } from '@react-spring/three';
 
 const colors = [
@@ -13,15 +14,26 @@ export default function Planet({ pillar, index, total }) {
   const mesh = useRef();
   const [hovered, setHovered] = useState(false);
 
-  const { scale } = useSpring({ scale: hovered ? 1.2 : 1 });
+  const { scale } = useSpring({ scale: hovered ? 1.5 : 1 });
+  const { emissiveIntensity } = useSpring({
+    emissiveIntensity: hovered ? 0.8 : 0.2,
+    config: { mass: 1, tension: 200, friction: 20 }
+  });
+
+  // Load texture based on slug
+  const texture = useLoader(TextureLoader, `/assets/textures/planets/${pillar.slug}.jpg`);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
-    const angle = (index / total) * Math.PI * 2 + t * 0.1;
-    const radius = 5;
-    group.current.position.x = Math.cos(angle) * radius;
-    group.current.position.z = Math.sin(angle) * radius;
-    mesh.current.rotation.y += 0.01;
+    const angle = (index / total) * Math.PI * 2 + t * 0.05;
+    const radius = 7;
+    const floatY = Math.sin(t + index) * 0.3;
+    group.current.position.set(
+      Math.cos(angle) * radius,
+      floatY,
+      Math.sin(angle) * radius
+    );
+    mesh.current.rotation.y += 0.002;
   });
 
   return (
@@ -33,18 +45,38 @@ export default function Planet({ pillar, index, total }) {
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}
       >
-        <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial
+        <sphereGeometry args={[0.6, 64, 64]} />
+        <animated.meshStandardMaterial
+          map={texture}
           color={colors[index % colors.length]}
           emissive={colors[index % colors.length]}
-          emissiveIntensity={0.2}
-          roughness={0.3}
-          metalness={0.1}
+          emissiveIntensity={emissiveIntensity}
+          roughness={0.2}
+          metalness={0.4}
         />
       </animated.mesh>
-      <Text position={[0, 0.8, 0]} fontSize={0.3} color="white" anchorX="center" anchorY="middle">
+
+      {/* Pillar Label Text */}
+      <Text
+        position={[0, -1, 0]}
+        fontSize={0.28}
+        color="white"
+        anchorX="center"
+        anchorY="middle"
+        outlineWidth={0.005}
+        outlineColor="#ffffff88"
+      >
         {pillar.title}
       </Text>
+
+      {/* Tooltip */}
+      {hovered && (
+        <Html position={[0, 1, 0]}>
+          <div className="text-xs px-2 py-1 rounded bg-white/10 text-white backdrop-blur shadow-lg border border-white/20">
+            Click to explore
+          </div>
+        </Html>
+      )}
     </group>
   );
 }
