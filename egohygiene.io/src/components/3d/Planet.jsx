@@ -34,7 +34,13 @@ export default function Planet({ pillar, index, total }) {
         onPointerOut={() => setHovered(false)}
       >
         <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial color={colors[index % colors.length]} />
+        <meshStandardMaterial
+          color={colors[index % colors.length]}
+          emissive={colors[index % colors.length]}
+          emissiveIntensity={0.2}
+          roughness={0.3}
+          metalness={0.1}
+        />
       </animated.mesh>
       <Text position={[0, 0.8, 0]} fontSize={0.3} color="white" anchorX="center" anchorY="middle">
         {pillar.title}
