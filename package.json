@@ -7,6 +7,11 @@
     "dev": "pnpm --filter egohygiene.io dev",
     "build": "pnpm --filter egohygiene.io build",
     "preview": "pnpm --filter egohygiene.io preview",
-    "astro": "pnpm --filter egohygiene.io astro"
+    "astro": "pnpm --filter egohygiene.io astro",
+    "validate-data": "ts-node --esm scripts/validate-data.ts"
+  },
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ts-node": "^10.9.2"
   }
 }
