@@ -2,13 +2,12 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars, Sparkles } from '@react-three/drei';
 import { animated } from '@react-spring/three';
-import pillars from '../../../../src/data/pillars.json';
 import EgoCore from './EgoCore.jsx';
 import Planet from './Planet.jsx';
 import HUDOverlay from './HUDOverlay.jsx';
 import BackgroundAudio from './BackgroundAudio.jsx';
 
-export default function LandingScene() {
+export default function LandingScene({ pillars }) {
   return (
     <div className="w-screen h-screen relative">
       <Canvas camera={{ position: [0, 0, 10] }}>

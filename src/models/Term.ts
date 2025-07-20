@@ -1,4 +1,5 @@
-import terms from '../data/terms.json';
+import { db } from 'astro:db';
+import { Term as TermTable } from '../../egohygiene.io/db/config';
 
 export interface Term {
   id: string;
@@ -7,13 +8,15 @@ export interface Term {
   definition: string;
 }
 
-export function loadTerms(): Term[] {
-  const data = terms as unknown[];
+export async function loadTerms(): Promise<Term[]> {
+  const rows = await db.select().from(TermTable).all();
+  const data = rows as unknown[];
   return data.filter((item) => validateTerm(item)) as Term[];
 }
 
-export function mapTermsBySlug(): Record<string, Term> {
-  return loadTerms().reduce((acc, t) => {
+export async function mapTermsBySlug(): Promise<Record<string, Term>> {
+  const ts = await loadTerms();
+  return ts.reduce((acc, t) => {
     acc[t.slug] = t;
     return acc;
   }, {} as Record<string, Term>);
