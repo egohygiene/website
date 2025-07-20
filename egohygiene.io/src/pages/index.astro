@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import LandingPage from '../components/landing/LandingPage.astro';
 ---
 
 <!doctype html>
@@ -10,11 +11,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <Header />
     <main>
-      <h1>Welcome to {SITE_TITLE}</h1>
-      <p><a href="/blogs">Go to the Blog</a></p>
+      <LandingPage />
     </main>
     <Footer />
   </body>

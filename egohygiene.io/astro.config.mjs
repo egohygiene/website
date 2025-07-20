@@ -6,11 +6,8 @@ import path from 'node:path';
 
 export default defineConfig({
   site: 'https://egohygiene.io',
+  base: '/',
   integrations: [mdx(), sitemap()],
-  alias: {
-    '@components': './src/components',
-    '@layouts': './src/layouts',
-    '@pages': './src/pages',
-    '@content': './src/content',
-  },
+  publicDir: path.resolve('./public'),
+  trailingSlash: "ignore",
 });
