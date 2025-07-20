@@ -11,13 +11,16 @@
       "@egohygiene/*": ["src/*"]
     },
 
+
     // Optional: customize conditions if you're using exports maps
     "customConditions": ["development", "browser", "import"]
   },
   "include": [
     "db",
     "src",
+    "src/env.d.ts",
+    "src/astro-shim.d.ts",
     ".astro/types.d.ts",
-    "astro.config.mts",
+    "astro.config.mts"
   ]
 }
