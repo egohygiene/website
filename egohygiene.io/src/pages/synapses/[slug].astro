@@ -1,15 +1,19 @@
 ---
-import { SynapseLayout } from '@components';
-import { getSynapses, mapSynapsesBySlug } from '../../../../src/models/Synapse';
+import type { GetStaticPathsResult } from "astro";
+import { SynapseLayout } from '@egohygiene/components';
+import { getSynapses, mapSynapsesBySlug, type Synapse } from '@egohygiene/models';
+import type { AstroParams } from "@egohygiene/types/astro";
 
-export async function getStaticPaths() {
-  const syns = await getSynapses();
-  return syns.map((syn) => ({ params: { slug: syn.slug } }));
+type Params = { slug: string };
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+  const synapses: Synapse[] = await getSynapses();
+  return synapses.map((synapse) => ({ params: { slug: synapse.slug } }));
 }
 
-const { slug } = Astro.params;
-const synapseMap = await mapSynapsesBySlug();
-const synapse = synapseMap[slug];
+const { slug } = Astro.params as AstroParams<Params>;;
+const synapseMap: Record<string, Synapse> = await mapSynapsesBySlug();
+const synapse: Synapse = synapseMap[slug];
 if (!synapse) {
   throw new Error(`Synapse not found: ${slug}`);
 }

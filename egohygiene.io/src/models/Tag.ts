@@ -1,6 +1,6 @@
 import { db, Tag as TagTable } from 'astro:db';
 
-export interface Tag {
+export type Tag = {
   name: string;
   description: string;
   related?: string[];

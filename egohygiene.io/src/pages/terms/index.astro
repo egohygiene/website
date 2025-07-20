@@ -1,9 +1,9 @@
 ---
-import { BaseHead, Header, Footer, TermList } from '@components';
-import { loadTerms } from '../../../../src/models/Term';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { BaseHead, Header, Footer, TermList } from '@egohygiene/components';
+import { loadTerms, type Term } from '@egohygiene/models';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@egohygiene/consts';
 
-const terms = await loadTerms();
+const terms: Term[] = await loadTerms();
 ---
 <!doctype html>
 <html lang="en">

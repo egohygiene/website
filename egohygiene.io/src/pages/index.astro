@@ -3,17 +3,14 @@ import {
   BaseHead,
   Header,
   LandingScene,
-  AboutEgoHygiene,
-  LatestSynapses,
-  ExplorePillars,
   Footer,
-} from '@components';
-import { loadPillars } from '../../../src/models/Pillar';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+} from '@egohygiene/components';
+import { loadPillars, type Pillar } from '@egohygiene/models';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@egohygiene/consts';
+
+const pillars: Promise<Pillar[]> = await loadPillars();
 ---
 <!doctype html>
-const pillars = await loadPillars();
-
 <html lang="en" class="scroll-smooth">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -24,16 +21,17 @@ const pillars = await loadPillars();
       <Header />
     </div>
     <section id="hero" class="relative h-screen w-screen overflow-hidden">
-      <LandingScene client:only="react" />
+      <LandingScene client:only="react" pillars={pillars} />
     </section>
     <Footer />
     <script>
-      const nav = document.getElementById('nav-wrapper');
-      const hero = document.getElementById('hero');
-      const cta = document.getElementById('cta');
-      const about = document.getElementById('about');
+      const nav: HTMLElement | null = document.getElementById('nav-wrapper');
+      const hero: HTMLElement | null = document.getElementById('hero');
+      const cta: HTMLElement | null = document.getElementById('cta');
+      const about: HTMLElement | null = document.getElementById('about');
       window.addEventListener('scroll', () => {
-        if(window.scrollY > hero.offsetHeight - 100){
+        if (!nav) return;
+        if(hero && window.scrollY > hero.offsetHeight - 100){
           nav.classList.remove('opacity-0','pointer-events-none');
           nav.classList.add('opacity-100');
         } else {

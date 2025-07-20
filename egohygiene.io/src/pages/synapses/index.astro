@@ -6,10 +6,10 @@ import {
   SynapseList,
   Pagination,
   CategoryCarousel,
-} from '@components';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getSynapses } from '../../../../src/models/Synapse';
-import { CATEGORY_GROUPS } from '../../data/categories';
+} from '@egohygiene/components';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@egohygiene/consts';
+import { getSynapses } from '@egohygiene/models';
+import { CATEGORY_GROUPS } from '@egohygiene/data/categories';
 
 const allSynapses = (await getSynapses()).sort(
   (a, b) => new Date(b.created).valueOf() - new Date(a.created).valueOf(),

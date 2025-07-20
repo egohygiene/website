@@ -1,6 +1,6 @@
-import relationships from '../data/relationships.json';
+import relationships from '@egohygiene/data/relationships.json';
 
-export interface Relationship {
+export type Relationship = {
   from: string;
   to: string;
   type: string;

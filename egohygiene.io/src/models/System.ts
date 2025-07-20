@@ -1,6 +1,6 @@
-import systems from '../data/systems.json';
+import systems from '@egohygiene/data/systems.json';
 
-export interface System {
+export type System = {
   name: string;
   description: string;
   pillar: string;

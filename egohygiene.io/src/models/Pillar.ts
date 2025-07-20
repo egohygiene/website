@@ -1,6 +1,6 @@
 import { db, Pillar as PillarTable } from 'astro:db';
 
-export interface Pillar {
+export type Pillar = {
   id: number;
   slug: string;
   title: string;

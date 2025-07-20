@@ -8,6 +8,11 @@ import react from '@astrojs/react';
 import db from '@astrojs/db';
 import { remarkModifiedTime } from './plugins/remark-modified-time.mjs';
 import { remarkReadingTime } from './plugins/remark-reading-time.mjs';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
   site: 'https://egohygiene.io',
@@ -18,7 +23,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@components': path.resolve('./src/components'),
+        "@egohygiene": path.resolve(__dirname, "src"),
       },
     },
     plugins: [visualizer({

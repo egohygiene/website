@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { useSpring, animated } from '@react-spring/three';
 
 export default function EgoCore() {
-  const mesh = useRef();
+  const mesh: React.RefObject<any> = useRef();
   const { scale } = useSpring({
     from: { scale: 1 },
     to: { scale: 1.1 },

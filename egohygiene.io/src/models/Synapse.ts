@@ -1,6 +1,6 @@
 import { db, Synapse as SynapseTable } from 'astro:db';
 
-export interface Synapse {
+export type Synapse = {
   id: string;
   slug: string;
   title: string;

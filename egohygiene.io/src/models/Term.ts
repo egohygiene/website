@@ -1,6 +1,6 @@
 import { db, Term as TermTable } from 'astro:db';
 
-export interface Term {
+export type Term = {
   id: string;
   slug: string;
   term: string;
