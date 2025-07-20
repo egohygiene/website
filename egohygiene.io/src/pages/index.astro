@@ -8,7 +8,7 @@ import {
 import { loadPillars, type Pillar } from '@egohygiene/models';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@egohygiene/consts';
 
-const pillars: Promise<Pillar[]> = await loadPillars();
+const pillars: Pillar[] = await loadPillars();
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
