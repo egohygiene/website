@@ -3,8 +3,18 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
-	<div class="social-links">
+        <p>&copy; {today.getFullYear()} Your name here. All rights reserved.</p>
+        <p class="made-with-love">Made with <span role="img" aria-label="love">❤️</span></p>
+        <div class="support-links">
+                <a href="https://github.com/sponsors/szmyty" target="_blank">GitHub Sponsors</a>
+                <a href="https://ko-fi.com/szmyty" target="_blank">Ko-fi</a>
+                <a href="https://opencollective.com/szmyty" target="_blank">Open Collective</a>
+                <a href="https://www.patreon.com/szmyty" target="_blank">Patreon</a>
+                <a href="https://thanks.dev/u/gh/szmyty" target="_blank">Thanks.dev</a>
+                <a href="https://liberapay.com/szmyty" target="_blank">Liberapay</a>
+                <a href="https://www.buymeacoffee.com/szmyty" target="_blank">Buy Me A Coffee</a>
+        </div>
+        <div class="social-links">
 		<a href="https://m.webtoo.ls/@astro" target="_blank">
 			<span class="sr-only">Follow Astro on Mastodon</span>
 			<svg
@@ -56,7 +66,29 @@ const today = new Date();
 		text-decoration: none;
 		color: rgb(var(--gray));
 	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+        .social-links a:hover {
+                color: rgb(var(--gray-dark));
+        }
+        .made-with-love {
+                margin-top: 0.5em;
+        }
+        .support-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5em;
+                margin-top: 1em;
+        }
+        .support-links a {
+                text-decoration: none;
+                color: rgb(var(--gray));
+                border: 1px solid rgba(var(--gray), 0.4);
+                padding: 0.25em 0.5em;
+                border-radius: 4px;
+                font-size: 0.9em;
+        }
+        .support-links a:hover {
+                color: rgb(var(--gray-dark));
+                border-color: rgb(var(--gray-dark));
+        }
 </style>
