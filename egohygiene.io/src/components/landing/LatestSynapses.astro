@@ -1,6 +1,6 @@
 ---
 import { getSynapses } from '../../../../src/models/Synapse';
-import SynapseCard from '../blog/SynapseCard.astro';
+import SynapseCard from '../synapse/SynapseCard.astro';
 
 const synapses = getSynapses()
   .sort((a, b) => new Date(b.created).valueOf() - new Date(a.created).valueOf())
@@ -15,7 +15,7 @@ const synapses = getSynapses()
       ))}
     </div>
     <div class="text-center mt-8">
-      <a href="/blogs" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition-colors">View All Posts</a>
+      <a href="/synapses" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition-colors">View All Posts</a>
     </div>
   </div>
 </section>
