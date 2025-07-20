@@ -1,5 +1,4 @@
-import { db } from 'astro:db';
-import { Term as TermTable } from '../../egohygiene.io/db/config';
+import { db, Term as TermTable } from 'astro:db';
 
 export interface Term {
   id: string;

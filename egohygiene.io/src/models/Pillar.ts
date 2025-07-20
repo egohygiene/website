@@ -1,5 +1,4 @@
-import { db } from 'astro:db';
-import { Pillar as PillarTable } from '../../egohygiene.io/db/config';
+import { db, Pillar as PillarTable } from 'astro:db';
 
 export interface Pillar {
   id: number;

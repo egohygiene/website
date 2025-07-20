@@ -1,5 +1,5 @@
 import { db } from 'astro:db';
-import { Pillar, Synapse, Tag, Term } from './config';
+import { Pillar, Synapse, Tag, Term } from 'astro:db';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
