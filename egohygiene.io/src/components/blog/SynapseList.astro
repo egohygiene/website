@@ -1,0 +1,30 @@
+---
+import type { Synapse } from '../../../../src/models/Synapse';
+import SynapseCard from './SynapseCard.astro';
+
+const { synapses } = Astro.props as { synapses: Synapse[] };
+---
+<ul class="synapse-list">
+  {synapses.map((syn) => (
+    <li><SynapseCard synapse={syn} /></li>
+  ))}
+</ul>
+
+<style>
+.synapse-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.synapse-list li {
+  width: calc(50% - 1rem);
+}
+@media (max-width: 720px) {
+  .synapse-list li {
+    width: 100%;
+  }
+}
+</style>
