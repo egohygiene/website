@@ -1,7 +1,5 @@
 ---
-import BaseHead from '../BaseHead.astro';
-import Header from '../Header.astro';
-import Footer from '../Footer.astro';
+import { BaseHead, Header, Footer } from '@components';
 import type { Term } from '../../../../src/models/Term';
 
 const { term } = Astro.props as { term: Term };

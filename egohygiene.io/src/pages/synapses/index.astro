@@ -1,12 +1,14 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import {
+  BaseHead,
+  Header,
+  Footer,
+  SynapseList,
+  Pagination,
+  CategoryCarousel,
+} from '@components';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getSynapses } from '../../../../src/models/Synapse';
-import SynapseList from '../../components/synapse/SynapseList.astro';
-import Pagination from '../../components/synapse/Pagination.astro';
-import CategoryCarousel from '../../components/CategoryCarousel.astro';
 import { CATEGORY_GROUPS } from '../../data/categories';
 
 const allSynapses = (await getSynapses()).sort(

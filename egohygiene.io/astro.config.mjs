@@ -16,6 +16,11 @@ export default defineConfig({
   publicDir: path.resolve('./public'),
   trailingSlash: "ignore",
   vite: {
+    resolve: {
+      alias: {
+        '@components': path.resolve('./src/components'),
+      },
+    },
     plugins: [visualizer({
         emitFile: true,
         filename: "stats.html",
