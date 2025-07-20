@@ -26,7 +26,7 @@
     "cSpell.language": "en",
     "cSpell.caseSensitive": false,
     "cSpell.useGitignore": true,
-    "cSpell.logFile": "${workspaceFolder}/.cache/cspell/cspell.log",
+    "cSpell.logFile": "${workspaceFolder}${pathSeparator}.cache${pathSeparator}cspell${pathSeparator}cspell.log",
     "cSpell.trustedWorkspace": true,
     "cSpell.mergeCSpellSettings": true,
     "cSpell.words": ["cspell", "TASKFILE"],
