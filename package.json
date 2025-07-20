@@ -1,0 +1,12 @@
+{
+  "name": "website",
+  "private": true,
+  "type": "module",
+  "workspaces": ["egohygiene.io"],
+  "scripts": {
+    "dev": "pnpm --filter egohygiene.io dev",
+    "build": "pnpm --filter egohygiene.io build",
+    "preview": "pnpm --filter egohygiene.io preview",
+    "astro": "pnpm --filter egohygiene.io astro"
+  }
+}
