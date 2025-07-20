@@ -25,7 +25,7 @@ export default function LandingScene() {
         </Suspense>
         <OrbitControls enablePan={true} enableZoom={true} />
       </Canvas>
-      <HUDOverlay pillars={pillars} />
+      {/* <HUDOverlay pillars={pillars} /> */}
       <BackgroundAudio />
     </div>
   );
