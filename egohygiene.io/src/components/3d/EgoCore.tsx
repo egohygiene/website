@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useSpring, animated } from '@react-spring/three';
+import type { Mesh } from 'three';
 
-export default function EgoCore() {
-  const mesh: React.RefObject<any> = useRef();
+export default function EgoCore(): React.ReactElement {
+  const mesh = useRef<Mesh>(null);
   const { scale } = useSpring({
     from: { scale: 1 },
     to: { scale: 1.1 },
