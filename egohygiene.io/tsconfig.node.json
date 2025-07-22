@@ -21,13 +21,13 @@
 
     // 🔗 Workspace-style aliases for tooling packages
     "paths": {
-      "@egohygiene/plugins/*": ["plugins/*"],
+      "@egohygiene/plugins/*": ["src/plugins/*"],
       "@egohygiene/db/*": ["db/*"]
     }
   },
 
   "include": [
-    "plugins",
+    "src/plugins",
     "db",
     "astro.config.ts",
     "vite.config.ts",

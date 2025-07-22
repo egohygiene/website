@@ -5,8 +5,7 @@ import path from 'node:path';
 import { visualizer } from 'rollup-plugin-visualizer';
 import react from '@astrojs/react';
 import db from '@astrojs/db';
-import { remarkModifiedTime } from './plugins/remark-modified-time';
-import { remarkReadingTime } from './plugins/remark-reading-time';
+import { remarkModifiedTime, remarkReadingTime } from '@egohygiene/plugins';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 

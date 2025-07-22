@@ -15,7 +15,8 @@
     "vitest.config.ts",
     "src/env.d.ts",
     "src/astro-shim.d.ts",
-    ".astro/types.d.ts"
+    ".astro/types.d.ts",
+    "types/**/*.d.ts",
   ],
 
   "exclude": [
@@ -25,5 +26,6 @@
     "coverage",
     "generated",
     ".cache"
-  ]
+  ],
+  "typeRoots": ["./types", "./node_modules/@types"]
 }
