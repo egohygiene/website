@@ -23,7 +23,7 @@
     "target": "ES2022",
     "moduleResolution": "bundler",
     "moduleDetection": "auto",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "preserveSymlinks": true,
     "resolveJsonModule": true,
     "resolvePackageJsonExports": true,

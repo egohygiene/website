@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useSpring, animated, SpringValue } from '@react-spring/three';
+import { animated, SpringValue, useSpring } from "@react-spring/three";
 import type { Mesh } from 'three';
 
 export default function EgoCore(): React.ReactElement {

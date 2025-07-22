@@ -25,7 +25,7 @@ export default function LandingScene({ pillars }: { pillars: Pillar[] }): React.
         <OrbitControls enablePan={true} enableZoom={true} />
       </Canvas>
       <HUDOverlay pillars={pillars} />
-      <BackgroundAudio />
+      {pillars.length > 0 && <BackgroundAudio />}
     </div>
   );
 }

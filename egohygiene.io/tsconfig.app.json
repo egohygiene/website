@@ -24,6 +24,9 @@
     "src/astro-shim.d.ts",
     ".astro/types.d.ts",
     "types/**/*.d.ts",
+    "types/astro.ts",
+    "astro.config.*",
+    "**/*.astro"
   ],
 
   "exclude": [

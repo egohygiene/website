@@ -4,7 +4,6 @@ export { default as Header } from './Header.astro';
 export { default as HeaderLink } from './HeaderLink.astro';
 export { default as FormattedDate } from './FormattedDate.astro';
 export { default as CategoryCarousel } from './CategoryCarousel.astro';
-export { default as FadeIn } from './FadeIn';
 export * from './landing';
 export * from './synapse';
 export * from './term';

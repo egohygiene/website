@@ -8,5 +8,6 @@ export type AstroData = NonNullable<VFile["data"]["astro"]>;
 
 export type AstroFrontmatter = {
   lastModified?: string;
+  minutesRead?: string;
   [key: string]: unknown;
 };

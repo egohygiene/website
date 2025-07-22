@@ -38,9 +38,27 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.4.1
         version: 3.4.1
+      '@astrojs/ts-plugin':
+        specifier: 1.10.4
+        version: 1.10.4
+      '@react-spring/animated':
+        specifier: 10.0.1
+        version: 10.0.1(react@19.1.0)
+      '@react-spring/core':
+        specifier: 10.0.1
+        version: 10.0.1(react@19.1.0)
+      '@react-spring/parallax':
+        specifier: 10.0.1
+        version: 10.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-spring/shared':
+        specifier: 10.0.1
+        version: 10.0.1(react@19.1.0)
       '@react-spring/three':
         specifier: ^10.0.1
         version: 10.0.1(@react-three/fiber@9.2.0(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.178.0))(react@19.1.0)(three@0.178.0)
+      '@react-spring/web':
+        specifier: 10.0.1
+        version: 10.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@react-three/cannon':
         specifier: ^6.6.0
         version: 6.6.0(@react-three/fiber@9.2.0(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.80.1(@babel/core@7.28.0)(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.178.0))(react@19.1.0)(three@0.178.0)(typescript@5.8.3)
@@ -72,7 +90,7 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       framer-motion:
-        specifier: ^12.23.6
+        specifier: 12.23.6
         version: 12.23.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       leva:
         specifier: ^0.10.0
@@ -344,6 +362,9 @@ packages:
   '@astrojs/telemetry@3.3.0':
     resolution: {integrity: sha512-UFBgfeldP06qu6khs/yY+q1cDAaArM2/7AEIqQ9Cuvf7B1hNLq0xDrZkct+QoIGyjq56y8IaE2I3CTvG99mlhQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
+
+  '@astrojs/ts-plugin@1.10.4':
+    resolution: {integrity: sha512-rapryQINgv5VLZF884R/wmgX3mM9eH1PC/I3kkPV9rP6lEWrRN1YClF3bGcDHFrf8EtTLc0Wqxne1Uetpevozg==}
 
   '@astrojs/yaml2ts@0.2.2':
     resolution: {integrity: sha512-GOfvSr5Nqy2z5XiwqTouBBpy5FyI6DEe+/g/Mk5am9SjILN1S5fOEvYK0GuWHg98yS/dobP4m8qyqw/URW35fQ==}
@@ -1407,6 +1428,12 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-native: '>=0.78'
+
+  '@react-spring/parallax@10.0.1':
+    resolution: {integrity: sha512-1JfestfZvTMTFHNkwKQlTiTTrc4wJXEAVkxg1Bcx+B6KzF7dfHMXQQmsRJc/KvNNpMPALtwP8xqIpq5kV1MjrA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@react-spring/rafz@10.0.1':
     resolution: {integrity: sha512-UrzG/d6Is+9i0aCAjsjWRqIlFFiC4lFqFHrH63zK935z2YDU95TOFio4VKGISJ5SG0xq4ULy7c1V3KU+XvL+Yg==}
@@ -7413,6 +7440,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@astrojs/ts-plugin@1.10.4':
+    dependencies:
+      '@astrojs/compiler': 2.12.2
+      '@astrojs/yaml2ts': 0.2.2
+      '@jridgewell/sourcemap-codec': 1.5.4
+      '@volar/language-core': 2.4.20
+      '@volar/typescript': 2.4.20
+      semver: 7.7.2
+      vscode-languageserver-textdocument: 1.0.12
+
   '@astrojs/yaml2ts@0.2.2':
     dependencies:
       yaml: 2.8.0
@@ -8518,6 +8555,13 @@ snapshots:
       '@react-spring/types': 10.0.1
       react: 19.1.0
       react-native: 0.80.1(@babel/core@7.28.0)(@types/react@19.1.8)(react@19.1.0)
+
+  '@react-spring/parallax@10.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@react-spring/shared': 10.0.1(react@19.1.0)
+      '@react-spring/web': 10.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@react-spring/rafz@10.0.1': {}
 
