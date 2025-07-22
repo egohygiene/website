@@ -1,42 +1,150 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    // Output targets
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "bundler", // required for Vite + Astro + modern ESM
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    // Type Checking: https://www.typescriptlang.org/tsconfig/#Type_Checking_6248
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictBuiltinIteratorReturn": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
 
-    // Module resolution & paths
+    // Modules: https://www.typescriptlang.org/tsconfig/#Modules_6244
+    "allowArbitraryExtensions": false,
+    "allowImportingTsExtensions": false,
+    "allowUmdGlobalAccess": false,
     "baseUrl": ".",
+    "customConditions": [],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "moduleSuffixes": [".ts", ".d.ts", ".tsx", ".js", ".jsx", "astro"],
+    "noResolve": false,
+    "noUncheckedSideEffectImports": true,
     "paths": {
-      "@egohygiene/*": ["src/*"],
+      "@": ["src/*"],
     },
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "moduleSuffixes": [".ts", ".d.ts", ".tsx", ".js", ".jsx", "astro"],
+    "resolvePackageJsonExports": true,
+    "rewriteRelativeImportExtensions": true,
+    "rootDir": ".",
+    "rootDirs": ["src", "generated"],
+    // "typeRoots": [], => https://www.typescriptlang.org/tsconfig/#typeRoots
+    // "types": ["node", "jest", "express"] => https://www.typescriptlang.org/tsconfig/#types
 
-    // Interop & imports
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,
+    // Emit: https://www.typescriptlang.org/tsconfig/#Emit_6246
+    "declaration": true,
+    "declarationDir": "generated/types",
+    "declarationMap": true,
+    "downlevelIteration": true,
+    "emitBOM": false,
+    "emitDeclarationOnly": false,
+    "importHelpers": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    // "mapRoot": "generated/maps", => https://www.typescriptlang.org/tsconfig/#mapRoot
+    "newLine": "lf",
+    "noEmit": false,
+    "noEmitHelpers": false,
+    "noEmitOnError": false,
+    "outDir": "dist",
+    // "outFile": undefined https://www.typescriptlang.org/tsconfig/#outFile
+    "preserveConstEnums": false,
+    "removeComments": false,
+    "sourceMap": true,
+    // "sourceRoot": "src", => https://www.typescriptlang.org/tsconfig/#sourceRoot
+    "stripInternal": false,
 
-    // Type checking
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "skipLibCheck": true,
-
-    // No JS output (type-check only)
-    "noEmit": true,
+    // JavaScript Support: https://www.typescriptlang.org/tsconfig/#JavaScript_Support_6247
     "allowJs": false,
+    "checkJs": false,
+    "maxNodeModuleJsDepth": 0,
+
+    // Editor Support: https://www.typescriptlang.org/tsconfig/#Editor_Support_6249
+    "disableSizeLimit": false,
+    // "plugins": [], => https://www.typescriptlang.org/tsconfig/#plugins
+
+    // Interop Constraints: https://www.typescriptlang.org/tsconfig/#Interop_Constraints_6252
+    "allowSyntheticDefaultImports": true,
+    "erasableSyntaxOnly": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "preserveSymlinks": true,
     "verbatimModuleSyntax": true,
 
-    // Defer environment types to extending configs
-    "types": []
+    // Backwards Compatibility: https://www.typescriptlang.org/tsconfig/#Backwards_Compatibility_6253
+    "charset": "utf8",
+    "keyofStringsOnly": false,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "suppressExcessPropertyErrors": false,
+    "suppressImplicitAnyIndexErrors": false,
+
+    // Language and Environment: https://www.typescriptlang.org/tsconfig/#Language_and_Environment_6254
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "jsx": "preserve",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
+    "jsxImportSource": "react",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "libReplacement": false,
+    "moduleDetection": "auto",
+    "noLib": false,
+    "target": "ES6",
+    "useDefineForClassFields": true,
+
+    // Compiler Diagnostics: https://www.typescriptlang.org/tsconfig/#Compiler_Diagnostics_6251
+    "diagnostics": false,
+    "explainFiles": false,
+    "extendedDiagnostics": false,
+    "generateCpuProfile": null,
+    "generateTrace": false,
+    "listEmittedFiles": false,
+    "noCheck": false,
+    "traceResolution": false,
+
+    // Projects: https://www.typescriptlang.org/tsconfig/#Projects_6255
+    "composite": false,
+    "disableReferencedProjectLoad": false,
+    "disableSolutionSearching": false,
+    "disableSourceOfProjectReferenceRedirect": false,
+    "incremental": true,
+    "tsBuildInfoFile": "generated/tsconfig.tsbuildinfo",
+
+    // Output Formatting: https://www.typescriptlang.org/tsconfig/#Output_Formatting_6256
+    "noErrorTruncation": false,
+    "preserveWatchOutput": false,
+    "pretty": true,
+
+    // Completeness: https://www.typescriptlang.org/tsconfig/#Completeness_6257
+    "skipLibCheck": true,
+
+
+
   },
   "exclude": [
     "dist",
     "node_modules"
-  ]
+  ],
+
+  // Watch Options: https://www.typescriptlang.org/tsconfig/#Watch_and_Build_Modes_6250
+  "assumeChangesOnlyAffectDirectDependencies": false,
+  "watchOptions": {
+    "excludeDirectories": ["**/node_modules", "_build", "temp/*"]
+  }
+
 }

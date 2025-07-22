@@ -10,6 +10,8 @@ import { remarkReadingTime } from './plugins/remark-reading-time';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // ESM-compatible __dirname emulation
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,12 +28,10 @@ export default defineConfig({
         '@egohygiene': path.resolve(__dirname, 'src'),
       },
     },
-    plugins: [
-      visualizer({
-        emitFile: true,
-        filename: 'stats.html',
-      }),
-    ],
+    plugins: [visualizer({
+      emitFile: true,
+      filename: 'stats.html',
+    }), tailwindcss()],
   },
   markdown: {
     remarkPlugins: [remarkModifiedTime, remarkReadingTime],
