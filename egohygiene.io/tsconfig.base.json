@@ -1,150 +1,94 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    // Type Checking: https://www.typescriptlang.org/tsconfig/#Type_Checking_6248
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "alwaysStrict": true,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
+    // 🧠 Strictest Type Checking
+    "strict": true,
     "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
     "noImplicitThis": true,
+    "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "alwaysStrict": true,
     "strictBindCallApply": true,
-    "strictBuiltinIteratorReturn": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
     "useUnknownInCatchVariables": true,
 
-    // Modules: https://www.typescriptlang.org/tsconfig/#Modules_6244
-    "allowArbitraryExtensions": false,
-    "allowImportingTsExtensions": false,
-    "allowUmdGlobalAccess": false,
-    "baseUrl": ".",
-    "customConditions": [],
-    "module": "esnext",
+    // 📦 Module Resolution
+    "module": "ESNext",
+    "target": "ES2022",
     "moduleResolution": "bundler",
-    "moduleSuffixes": [".ts", ".d.ts", ".tsx", ".js", ".jsx", "astro"],
-    "noResolve": false,
-    "noUncheckedSideEffectImports": true,
-    "paths": {
-      "@": ["src/*"],
-    },
+    "moduleDetection": "auto",
+    "verbatimModuleSyntax": true,
+    "preserveSymlinks": true,
     "resolveJsonModule": true,
     "resolvePackageJsonExports": true,
-    "rewriteRelativeImportExtensions": true,
-    "rootDir": ".",
-    "rootDirs": ["src", "generated"],
-    // "typeRoots": [], => https://www.typescriptlang.org/tsconfig/#typeRoots
-    // "types": ["node", "jest", "express"] => https://www.typescriptlang.org/tsconfig/#types
-
-    // Emit: https://www.typescriptlang.org/tsconfig/#Emit_6246
-    "declaration": true,
-    "declarationDir": "generated/types",
-    "declarationMap": true,
-    "downlevelIteration": true,
-    "emitBOM": false,
-    "emitDeclarationOnly": false,
-    "importHelpers": true,
-    "inlineSourceMap": false,
-    "inlineSources": false,
-    // "mapRoot": "generated/maps", => https://www.typescriptlang.org/tsconfig/#mapRoot
-    "newLine": "lf",
-    "noEmit": false,
-    "noEmitHelpers": false,
-    "noEmitOnError": false,
-    "outDir": "dist",
-    // "outFile": undefined https://www.typescriptlang.org/tsconfig/#outFile
-    "preserveConstEnums": false,
-    "removeComments": false,
-    "sourceMap": true,
-    // "sourceRoot": "src", => https://www.typescriptlang.org/tsconfig/#sourceRoot
-    "stripInternal": false,
-
-    // JavaScript Support: https://www.typescriptlang.org/tsconfig/#JavaScript_Support_6247
-    "allowJs": false,
-    "checkJs": false,
-    "maxNodeModuleJsDepth": 0,
-
-    // Editor Support: https://www.typescriptlang.org/tsconfig/#Editor_Support_6249
-    "disableSizeLimit": false,
-    // "plugins": [], => https://www.typescriptlang.org/tsconfig/#plugins
-
-    // Interop Constraints: https://www.typescriptlang.org/tsconfig/#Interop_Constraints_6252
     "allowSyntheticDefaultImports": true,
-    "erasableSyntaxOnly": false,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "preserveSymlinks": true,
-    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@": ["src/*"]
+    },
+    "rootDirs": ["src", "generated"],
+    "rewriteRelativeImportExtensions": true,
+    "customConditions": [],
 
-    // Backwards Compatibility: https://www.typescriptlang.org/tsconfig/#Backwards_Compatibility_6253
-    "charset": "utf8",
-    "keyofStringsOnly": false,
-    "noImplicitUseStrict": false,
-    "noStrictGenericChecks": false,
-    "suppressExcessPropertyErrors": false,
-    "suppressImplicitAnyIndexErrors": false,
+    // 🛠 Emit & Declarations (override per target)
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "generated/types",
+    "emitDeclarationOnly": false, // Override in `tsconfig.types.json`
+    "sourceMap": true,
+    "outDir": "dist",
+    "newLine": "lf",
+    "downlevelIteration": true,
+    "importHelpers": true,
 
-    // Language and Environment: https://www.typescriptlang.org/tsconfig/#Language_and_Environment_6254
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
-    "jsx": "preserve",
-    "jsxFactory": "React.createElement",
-    "jsxFragmentFactory": "React.Fragment",
-    "jsxImportSource": "react",
+    // ✋ Don’t Emit JS by default
+    "noEmit": true,
+
+    // 📚 Libraries
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "libReplacement": false,
-    "moduleDetection": "auto",
-    "noLib": false,
-    "target": "ES6",
-    "useDefineForClassFields": true,
 
-    // Compiler Diagnostics: https://www.typescriptlang.org/tsconfig/#Compiler_Diagnostics_6251
-    "diagnostics": false,
-    "explainFiles": false,
-    "extendedDiagnostics": false,
-    "generateCpuProfile": null,
-    "generateTrace": false,
-    "listEmittedFiles": false,
-    "noCheck": false,
-    "traceResolution": false,
+    // 🌐 JSX defaults — override in app-specific config
+    "jsx": "preserve",
 
-    // Projects: https://www.typescriptlang.org/tsconfig/#Projects_6255
+    // 🧱 Project-level behavior
     "composite": false,
-    "disableReferencedProjectLoad": false,
-    "disableSolutionSearching": false,
-    "disableSourceOfProjectReferenceRedirect": false,
     "incremental": true,
     "tsBuildInfoFile": "generated/tsconfig.tsbuildinfo",
 
-    // Output Formatting: https://www.typescriptlang.org/tsconfig/#Output_Formatting_6256
-    "noErrorTruncation": false,
-    "preserveWatchOutput": false,
+    // 👁 Debugging & Diagnostics (disabled by default)
     "pretty": true,
-
-    // Completeness: https://www.typescriptlang.org/tsconfig/#Completeness_6257
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
 
+    // 🚫 JS support turned off (can override for migration)
+    "allowJs": false,
+    "checkJs": false,
 
+    // 🔬 Experimental / Decorators — override per target
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
 
+    // 🔒 Safe constraints (leave strict)
+    "allowUmdGlobalAccess": false,
+    "allowArbitraryExtensions": false,
+    "allowImportingTsExtensions": false,
+    "noUncheckedSideEffectImports": true,
+    "noResolve": false
   },
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
 
-  // Watch Options: https://www.typescriptlang.org/tsconfig/#Watch_and_Build_Modes_6250
-  "assumeChangesOnlyAffectDirectDependencies": false,
+  // 🧹 Ignore folders in base
+  "exclude": ["dist", "node_modules"],
+
+  // 🕵️ Watch settings (opt-in)
   "watchOptions": {
     "excludeDirectories": ["**/node_modules", "_build", "temp/*"]
   }
-
 }
