@@ -8,7 +8,7 @@ const { groups } = Astro.props as { groups: CategoryGroup[] };
       <h3>{group.group}</h3>
       <div class="carousel">
         {group.categories.map((cat) => (
-          <a class="card" href={`/synapses/categories/${cat.slug}/`} style={`background-image:url('${cat.image}');`}>
+          <a class="card" href={`/category/${cat.slug}/`} style={`background-image:url('${cat.image}');`}>
             <span>{cat.name}</span>
           </a>
         ))}

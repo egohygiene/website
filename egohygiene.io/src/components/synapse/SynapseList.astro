@@ -1,8 +1,8 @@
 ---
-import type { Synapse } from '@egohygiene/models';
+import type { SynapseRow } from '../../lib/getSynapses';
 import { SynapseCard } from '@egohygiene/components';
 
-const { synapses } = Astro.props as { synapses: Synapse[] };
+const { synapses } = Astro.props as { synapses: SynapseRow[] };
 ---
 <ul class="synapse-list">
   {synapses.map((syn) => (
