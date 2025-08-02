@@ -14,6 +14,16 @@ Structured content is provided through **Astro DB** instead of static JSON files
    pnpm dev
    ```
 
+## Quality checks
+
+Run the following commands to maintain code quality:
+
+```bash
+pnpm lint      # run ESLint
+pnpm format    # check Prettier formatting
+pnpm typecheck # verify TypeScript types
+```
+
 Before seeding the database, validate the structured content:
 ```bash
 pnpm validate-data
