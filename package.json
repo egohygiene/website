@@ -11,7 +11,9 @@
     "preview": "pnpm --filter egohygiene.io preview",
     "astro": "pnpm --filter egohygiene.io astro",
     "typecheck": "pnpm --filter egohygiene.io typecheck",
-    "validate-data": "ts-node --esm scripts/validate-data.ts"
+    "validate-data": "ts-node --esm scripts/validate-data.ts",
+    "lint": "pnpm --filter egohygiene.io lint",
+    "format": "pnpm --filter egohygiene.io format"
   },
   "devDependencies": {
     "@types/node": "^24.0.15",

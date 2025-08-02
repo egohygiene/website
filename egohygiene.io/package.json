@@ -42,7 +42,9 @@
     "types": "tsc -p tsconfig.types.json",
     "build-cli": "tsc -p tsconfig.build.json",
     "typedoc": "typedoc --options config/typedoc.json",
-    "dev:db:seed": "tsx src/db/seed.ts"
+    "dev:db:seed": "tsx src/db/seed.ts",
+    "lint": "eslint .",
+    "format": "prettier . --check"
   },
   "dependencies": {
     "@astrojs/db": "^0.15.0",
