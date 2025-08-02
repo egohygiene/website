@@ -1,68 +1,60 @@
-# Astro Starter Kit: Blog
+# EgoHygiene Blog
+
+This package contains the Astro frontend for the EgoHygiene blog. The codebase has been modularized so every UI element lives in its own component folder and content is loaded from a SQLite database.
+
+## Project Structure
+
+```
+src/
+  components/
+    SynapseCard/
+      SynapseCard.astro
+      SynapseCard.types.ts
+      SynapseCard.styles.css
+      SynapseCard.test.tsx
+      SynapseCard.stories.tsx
+      index.ts
+  db/
+    schema.sql
+    seed.json
+    db.ts
+    seed.ts
+  lib/
+    getSynapses.ts
+    getSynapseBySlug.ts
+  pages/
+    index.astro
+    synapse/[slug].astro
+```
+
+## Development
+
+Install dependencies and start the dev server:
 
 ```sh
-pnpm create astro@latest -- --template blog
+pnpm install
+pnpm dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+### Database
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The blog content is stored in a local SQLite database. To create and seed the database with demo content run:
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+pnpm dev:db:seed
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+This will generate a `synapses.db` file in the project root using the schema defined in `src/db/schema.sql` and the sample data in `src/db/seed.json`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Testing
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Vitest and Storybook files are provided for the `SynapseCard` component as examples of the component architecture. Run tests with:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+pnpm test
+```
 
-## 🧞 Commands
+## Adding Synapses
 
-All commands are run from the root of the project, from a terminal:
+New synapses can be inserted using SQL or by modifying `seed.json` and running the seed script again. Future iterations may include an admin panel for managing content.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).

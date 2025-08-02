@@ -4,6 +4,7 @@ export { default as Header } from './Header.astro';
 export { default as HeaderLink } from './HeaderLink.astro';
 export { default as FormattedDate } from './FormattedDate.astro';
 export { default as CategoryCarousel } from './CategoryCarousel.astro';
+export * from './SynapseCard';
 export * from './landing';
 export * from './synapse';
 export * from './term';

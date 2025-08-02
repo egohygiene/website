@@ -1,48 +1,20 @@
 ---
-import {
-  BaseHead,
-  Header,
-  LandingScene,
-  Footer,
-} from '@egohygiene/components';
-import { loadPillars, type Pillar } from '@egohygiene/models';
+import { BaseHead, Header, Footer, SynapseList } from '@egohygiene/components';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@egohygiene/consts';
+import { getSynapses } from '../lib/getSynapses';
 
-const pillars: Pillar[] = await loadPillars();
+const synapses = getSynapses();
 ---
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-    <div id="nav-wrapper" class="fixed top-0 left-0 w-full opacity-0 transition-opacity duration-500 pointer-events-none z-20">
-      <Header />
-    </div>
-    <section id="hero" class="relative h-screen w-screen overflow-hidden">
-      <LandingScene client:only="react" pillars={pillars} />
-    </section>
+  <body>
+    <Header />
+    <main>
+      <SynapseList synapses={synapses} />
+    </main>
     <Footer />
-    <script>
-      const nav: HTMLElement | null = document.getElementById('nav-wrapper');
-      const hero: HTMLElement | null = document.getElementById('hero');
-      const cta: HTMLElement | null = document.getElementById('cta');
-      const about: HTMLElement | null = document.getElementById('about');
-      window.addEventListener('scroll', () => {
-        if (!nav) return;
-        if(hero && window.scrollY > hero.offsetHeight - 100){
-          nav.classList.remove('opacity-0','pointer-events-none');
-          nav.classList.add('opacity-100');
-        } else {
-          nav.classList.add('opacity-0','pointer-events-none');
-          nav.classList.remove('opacity-100');
-        }
-      });
-      cta?.addEventListener('click', (e)=>{
-        e.preventDefault();
-        about?.scrollIntoView({ behavior: 'smooth' });
-      });
-    </script>
   </body>
 </html>
